@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet' type='text/css'>
+    <title>Digital Study Clock</title>
+
+    <style>
+        body {
+            background-color: #151F19;
+        }
+
+        .container {
+            width: 600px;
+            height: 250px;
+            border: 1px solid black;
+            border-radius: 20px;
+            text-align: center;
+            margin: auto;
+            margin-top: 60px;
+            background-color: #C4CDCE;
+        }
+
+        .heading {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 40px;
+            font-weight: 800;
+            text-decoration: underline;
+            align-items: center;
+            margin-top: 25px;
+
+        }
+
+        h1 {
+            font-family: 'Orbitron', sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="heading">Digital Study Clock</div>
+        <h1 id="times">Time</h1>
+        <h1 id="date">date</h1>
+
+    </div>
+
+
+
+    <script>
+
+
+
+        setInterval(() => {
+            var time = new Date();
+            var sec = time.getSeconds()
+            var min = time.getMinutes()
+            var hours = time.getHours()
+            var Todaydate = time.toDateString();
+            var timenow = hours + ":" + min + ":" + sec
+            document.getElementById("times").innerHTML = timenow
+            document.getElementById("date").innerHTML = Todaydate
+
+            console.log("first", time)
+        }, 1000);
+
+
+
+
+
+
+
+
+
+        /*  getDate() in javascript only returns the day as number (1 - 31)
+
+        Example
+        var d = new Date();
+        document.getElementById("demo").innerHTML = d.getDate();
+
+        Output:
+        22
+
+        getFullYear()	    Get the year as a four digit number(yyyy)
+        getMonth()	        Get the month as a number(0 - 11)
+        getDate()	        Get the day as a number(1 - 31)
+        getHours()	        Get the hour(0 - 23)
+        getMinutes()	    Get the minute(0 - 59)
+        getSeconds()	    Get the second(0 - 59)
+        getMilliseconds()	Get the millisecond(0 - 999)
+        getTime()	        Get the time(milliseconds since January 1, 1970)
+        getDay()	        Get the weekday as a number(0 - 6)
+        Date.now()	        Get the time.ECMAScript 5. */
+    </script>
+</body>
+
+</html>
